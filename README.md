@@ -2,6 +2,8 @@
 
 Repository for **AVSD-Scenes**, containing the code for modality-specific description generation, multimodal description fusion, LLM-based caption evaluation, cross-modal retrieval, and multimodal acoustic scene classification.
 
+**The AVSD-Scenes dataset will be made available online by 30th September 2026**
+
 ## 1. Stage 1: Modality-Specific Description Generation
 
 Generate modality-specific descriptions for the audio and visual modalities.
