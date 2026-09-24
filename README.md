@@ -2,7 +2,16 @@
 
 Repository for **AVSD-Scenes**, containing the code for modality-specific description generation, multimodal description fusion, LLM-based caption evaluation, cross-modal retrieval, and multimodal acoustic scene classification.
 
-**The AVSD-Scenes dataset and analysis will be made available online by 30th September 2026**
+**The AVSD-Scenes dataset and analysis will be made available online by 6th October 2026**
+
+> **Official implementation** of AVSD-Senes framework for multimodal scene description generation.
+
+[![Project Page](https://img.shields.io/badge/🌐-Project_Page-blue)](YOUR_PROJECT_PAGE_URL)
+[![arXiv](https://img.shields.io/badge/arXiv-b31b1b.svg)](YOUR_ARXIV_URL)
+[![Download dataset](https://img.shields.io/badge/Download-Dataset-blue.svg)](YOUR_DATASET_URL)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+
 
 ## 1. Stage 1: Modality-Specific Description Generation
 
@@ -23,7 +32,10 @@ python generate_gemma.py
 python merge_captions.py.py
 ```
 
-## 3. LLM Judge
+## 3. Dataset statistic analysis
+To be updated soon.
+
+## 4. LLM-as-a-Judge Evaluation
 
 Evaluate the generated captions using an LLM-based judge.
 
@@ -31,7 +43,21 @@ Evaluate the generated captions using an LLM-based judge.
 python LLMJudge/llmJudgeQwen2.py
 ```
 
-## 4. CLIP Evaluation
+## 5. Human Evaluation
+Four participants independently rated the Mistral-generated multimodal descriptions on a five-point scale using six criteria: audio fidelity, visual fidelity, event coverage, hallucination, fluency, and overall quality.
+
+### Human Evaluation Criteria
+
+| Sr. No. | Criterion | Question | 5 | 4 | 3 | 2 | 1 |
+|:---:|---|---|---|---|---|---|---|
+| 1 | **Audio Fidelity** | How accurately does the description represent the audio content? | Completely accurate | Mostly accurate | Partially accurate | Mostly inaccurate | Very inaccurate |
+| 2 | **Visual Fidelity** | How accurately does the description represent the visual content? | Completely accurate | Mostly accurate | Partially accurate | Mostly inaccurate | Very inaccurate |
+| 3 | **Completeness (Event Coverage)** | How well does the description capture the important information from both audio and visual modalities? | Excellent coverage | Good coverage | Moderate coverage | Limited coverage | Very poor coverage |
+| 4 | **Hallucination** | To what extent does the description avoid unsupported or fabricated information? | No hallucinations | Minor unsupported details | Some unsupported details | Several unsupported details | Major hallucinations |
+| 5 | **Fluency** | How natural, coherent, and grammatically correct is the description? | Excellent | Good | Acceptable | Poor | Very poor |
+| 6 | **Overall Quality** | Considering accuracy, completeness, and readability, how would you rate the description overall? | Excellent | Good | Acceptable | Poor | Very poor |
+
+## 6. CLIP Evaluation
 
 Extract CLIP embeddings and compute cross-modal similarity.
 
@@ -40,7 +66,7 @@ python clip_evaluation.py
 python CLIP/clip_emb_extract.py
 ```
 
-## 5. CLAP Evaluation
+## 7. CLAP Evaluation
 
 Extract CLAP embeddings and compute audio-text similarity.
 
@@ -74,7 +100,7 @@ python CLAP/CLAP_mistral.py
 python CLAP/CLAP_gemma.py
 ```
 
-## 6. ImageBind Feature Extraction
+## 8. ImageBind Feature Extraction
 
 Extract ImageBind embeddings for multimodal representation and retrieval experiments.
 
@@ -82,11 +108,11 @@ Extract ImageBind embeddings for multimodal representation and retrieval experim
 python ImageBind/ImageBind_feat
 ```
 
-## 7. Cross-Modal Retrieval
+## 9. Cross-Modal Retrieval
 
 Evaluate cross-modal retrieval at both the instance and scene levels.
 
-### 7.1 Instance-Level Retrieval
+### 9.1 Instance-Level Retrieval
 
 ```bash
 python cross_modal_retreival/retreival.py
@@ -94,7 +120,7 @@ python cross_modal_retreival/retreival_imagebind.py
 python cross_modal_retreival/retreival_imagebind_video.py
 ```
 
-### 7.2 Scene-Level Retrieval
+### 9.2 Scene-Level Retrieval
 
 ```bash
 python cross_modal_retreival/scene_level_retreival.py
@@ -102,11 +128,11 @@ python cross_modal_retreival/scene_level_retreival_imagebind.py
 python cross_modal_retreival/scene_level_retreival_imagebind_video.py
 ```
 
-## 8. Multimodal Scene Classification
+## 10. Multimodal Scene Classification
 
 Multimodal acoustic scene classification using audio, video, and caption representations.
 
-### 8.1 Extract OpenL3 Features for Audio and Video
+### 10.1 Extract OpenL3 Features for Audio and Video
 
 Create training and validation data:
 
@@ -122,14 +148,14 @@ python MultimodalSceneClassification/TAU-urban-audio-visual-scenes/create_data/h
 python MultimodalSceneClassification/TAU-urban-audio-visual-scenes/create_data/hdf5_to_numpy_eval.py
 ```
 
-### 8.2 Extract BERT Embeddings for Captions
+### 10.2 Extract BERT Embeddings for Captions
 
 ```bash
 python MultimodalSceneClassification/bert_feat.py
 python MultimodalSceneClassification/bert_feat_train_eval_split.py
 ```
 
-### 8.3 Scene Classification Using SVM
+### 10.3 Scene Classification Using SVM
 
 Train and evaluate SVM-based multimodal scene classification models.
 
@@ -142,4 +168,8 @@ python MultimodalSceneClassification/svm.py
 * Ensure the required pretrained models and dependencies are installed before running the scripts.
 * Update dataset and feature paths in the respective scripts according to the local environment.
 * The scripts are organized according to the different stages of the AVSD-Scenes experimental pipeline.
+
+## Acknoweldgement
+This work was supported by the Engineering and Physical Sciences Research Council (EPSRC)  [grant number EP/Y028805/1].
+
 
