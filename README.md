@@ -4,7 +4,7 @@ Repository for **AVSD-Scenes**, containing the code for modality-specific descri
 
 **The AVSD-Scenes dataset and analysis will be made available online by 6th October 2026**
 
-> **Official implementation** of AVSD-Senes framework for multimodal scene description generation.
+> **Official implementation** of AVSD-Scenes framework for multimodal scene description generation.
 
 [![Project Page](https://img.shields.io/badge/🌐-Project_Page-blue)](YOUR_PROJECT_PAGE_URL)
 [![arXiv](https://img.shields.io/badge/arXiv-b31b1b.svg)](YOUR_ARXIV_URL)
