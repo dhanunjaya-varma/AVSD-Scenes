@@ -5,9 +5,9 @@ import os
 # MUST be set before importing transformers
 # ============================================================
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
-SCRATCH_DIR = "/home/dhanunjaya/scratch/huggingface"
+SCRATCH_DIR = "./huggingface"
 
 os.environ["HF_HOME"] = SCRATCH_DIR
 os.environ["HF_HUB_CACHE"] = os.path.join(SCRATCH_DIR, "hub")

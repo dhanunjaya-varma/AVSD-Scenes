@@ -5,7 +5,7 @@ import numpy as np
 # CONFIG
 # ============================================================
 
-INPUT_FILE = "master_captions_qc.csv"
+INPUT_FILE = "master_captions.csv"
 
 CAPTIONS = {
     "Qwen3": "qwen3_caption",

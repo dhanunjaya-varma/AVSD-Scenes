@@ -17,8 +17,8 @@ from qwen_vl_utils import process_vision_info
 META_CSV = "meta.csv"
 OUTPUT_CSV = "captions.csv"
 
-DATA_ROOT = "/home/dhanunjaya/scratch/TAU"      # folder containing wav files
-#VIDEO_ROOT = "/home/dhanunjaya/scratch/TAU"      # folder containing mp4 files
+DATA_ROOT = "TAU"      # folder containing wav files
+#VIDEO_ROOT = "TAU"      # folder containing mp4 files
 
 # ----------------------------------------------------
 # Quantization

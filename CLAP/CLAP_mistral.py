@@ -3,7 +3,7 @@ import os
 # ============================================================
 # GPU
 # ============================================================
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 import librosa
 import torch
@@ -17,9 +17,9 @@ import laion_clap
 # ============================================================
 # PATHS
 # ============================================================
-INPUT_CSV = "master_captions_qc.csv"
+INPUT_CSV = "master_captions.csv"
 
-DATA_ROOT = "/home/dhanunjaya/scratch/TAU"
+DATA_ROOT = "./TAU"
 
 OUTPUT_FILE = "mistral_clap_embeddings_and_scores.pt"
 

@@ -12,9 +12,9 @@ from PIL import Image
 # CONFIG
 # ============================================================
 
-INPUT_CSV = "master_captions_qc.csv"
+INPUT_CSV = "master_captions.csv"
 
-DATA_ROOT = "/home/dhanunjaya/scratch/TAU"
+DATA_ROOT = "./TAU"
 
 OUTPUT_FILE = "clip_video_caption_embeddings_and_scores.pt"
 

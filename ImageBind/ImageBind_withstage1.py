@@ -12,22 +12,22 @@ from imagebind.models import imagebind_model
 from imagebind.models.imagebind_model import ModalityType
 
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 
 # ============================================================
 # CONFIG
 # ============================================================
 
-INPUT_CSV = "master_captions_qc.csv"
+INPUT_CSV = "master_captions.csv"
 
-DATA_ROOT = "/home/dhanunjaya/scratch/TAU"
+DATA_ROOT = "./TAU"
 
 # ------------------------------------------------------------
 # ImageBind checkpoint
 # ------------------------------------------------------------
 
-MODEL_DIR = "/home/dhanunjaya/scratch/models/imagebind"
+MODEL_DIR = "./models/imagebind"
 
 CHECKPOINT_PATH = os.path.join(
     MODEL_DIR,

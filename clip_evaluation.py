@@ -4,7 +4,7 @@ import os
 # GPU 1
 # ============================================================
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 import cv2
 import clip
@@ -24,7 +24,7 @@ INPUT_CSV = "master_captions_qc.csv"
 
 OUTPUT_CSV = "clip_scores.csv"
 
-DATA_ROOT = "/home/dhanunjaya/scratch/TAU"
+DATA_ROOT = "TAU"
 
 
 # ============================================================

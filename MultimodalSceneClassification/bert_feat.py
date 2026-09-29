@@ -8,7 +8,7 @@ from tqdm import tqdm
 # CONFIG
 # ============================================================
 
-INPUT_CSV = "master_captions_qc.csv"
+INPUT_CSV = "master_captions.csv"
 
 OUTPUT_FILE = "bert_cls_caption_embeddings.pt"
 

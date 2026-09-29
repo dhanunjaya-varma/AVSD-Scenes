@@ -25,7 +25,7 @@ MODEL_NAME = "Qwen/Qwen2.5-14B-Instruct"
 # Input
 # ------------------------------------------------------------
 
-INPUT_FILE = "master_captions_qc.csv"
+INPUT_FILE = "master_captions.csv"
 
 # ------------------------------------------------------------
 # Output
@@ -73,7 +73,7 @@ MAX_SAMPLES = None
 # HUGGING FACE CACHE
 # ============================================================
 
-SCRATCH_DIR = "/home/dhanunjaya/scratch/huggingface"
+SCRATCH_DIR = "./huggingface"
 
 os.environ["HF_HOME"] = SCRATCH_DIR
 os.environ["HF_HUB_CACHE"] = os.path.join(
