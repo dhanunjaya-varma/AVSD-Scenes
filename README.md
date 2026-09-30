@@ -33,7 +33,17 @@ python merge_captions.py.py
 ```
 
 ## 3. Dataset statistic analysis
-To be updated soon.
+The dataset contains **12,291 scene descriptions** across **10 scene categories**, generated using Qwen3, Mistral, and Gemma.
+
+| Model | Mean Words | Std. Dev. | Vocabulary |
+|---|---:|---:|---:|
+| Qwen3 | 52.57 | 8.99 | 4,470 |
+| Mistral | 43.66 | 10.57 | 4,170 |
+| Gemma | 43.95 | 5.42 | 4,319 |
+
+The dataset covers scenes including airports, buses, metro stations, parks, public squares, shopping malls, pedestrian streets, traffic scenes, and trams.
+
+For detailed dataset statistics, scene-wise analysis, and vocabulary overlap, see the **[Dataset Analysis](WEBSITE_URL)** page.
 
 ## 4. LLM-as-a-Judge Evaluation
 
