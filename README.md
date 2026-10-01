@@ -8,7 +8,7 @@ Repository for **AVSD-Scenes**, containing the code for modality-specific descri
 
 [![Project Page](https://img.shields.io/badge/🌐-Project_Page-blue)](YOUR_PROJECT_PAGE_URL)
 [![arXiv](https://img.shields.io/badge/arXiv-b31b1b.svg)](YOUR_ARXIV_URL)
-[![Download dataset](https://img.shields.io/badge/Download-Dataset-blue.svg)](YOUR_DATASET_URL)
+[![Download dataset](https://img.shields.io/badge/Download-Dataset-blue.svg)](https://zenodo.org/records/23084983)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 
