@@ -1,16 +1,14 @@
-# AVSD-Scenes
+# AVSD-Scenes: A Dataset for Audio-Visual Description of Urban Scenes
+[![Project Page](https://img.shields.io/badge/🌐-Project_Page-blue)](YOUR_PROJECT_PAGE_URL)
+[![arXiv](https://img.shields.io/badge/arXiv-b31b1b.svg)](https://arxiv.org/abs/2610.01861)
+[![Download dataset](https://img.shields.io/badge/Download-Dataset-blue.svg)](https://zenodo.org/records/23084983)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Repository for **AVSD-Scenes**, containing the code for modality-specific description generation, multimodal description fusion, LLM-based caption evaluation, cross-modal retrieval, and multimodal acoustic scene classification.
 
 **The AVSD-Scenes dataset and analysis will be made available online by 6th October 2026**
 
 > **Official implementation** of AVSD-Scenes framework for multimodal scene description generation.
-
-[![Project Page](https://img.shields.io/badge/🌐-Project_Page-blue)](YOUR_PROJECT_PAGE_URL)
-[![arXiv](https://img.shields.io/badge/arXiv-b31b1b.svg)](YOUR_ARXIV_URL)
-[![Download dataset](https://img.shields.io/badge/Download-Dataset-blue.svg)](https://zenodo.org/records/23084983)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
 
 
 ## 1. Stage 1: Modality-Specific Description Generation
