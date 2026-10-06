@@ -41,7 +41,7 @@ The dataset contains **12,291 scene descriptions** across **10 scene categories*
 
 The dataset covers scenes including airports, buses, metro stations, parks, public squares, shopping malls, pedestrian streets, traffic scenes, and trams.
 
-For detailed dataset statistics, scene-wise analysis, and vocabulary overlap, see the **[Dataset Analysis](WEBSITE_URL)** page.
+For detailed dataset statistics, scene-wise analysis, and vocabulary overlap, see the **[Dataset Analysis](https://dhanunjaya-varma.github.io/AVSD-Scenes/)** page.
 
 ## 4. LLM-as-a-Judge Evaluation
 
