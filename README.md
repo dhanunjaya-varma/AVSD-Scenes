@@ -1,5 +1,5 @@
 # AVSD-Scenes: A Dataset for Audio-Visual Description of Urban Scenes
-[![Project Page](https://img.shields.io/badge/🌐-Project_Page-blue)](YOUR_PROJECT_PAGE_URL)
+[![Project Page](https://img.shields.io/badge/🌐-Project_Page-blue)](https://dhanunjaya-varma.github.io/AVSD-Scenes/)
 [![arXiv](https://img.shields.io/badge/arXiv-b31b1b.svg)](https://arxiv.org/abs/2610.01861)
 [![Download dataset](https://img.shields.io/badge/Download-Dataset-blue.svg)](https://zenodo.org/records/23084983)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
