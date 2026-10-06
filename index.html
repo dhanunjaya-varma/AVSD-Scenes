@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AVSD-Scenes: A Dataset for Audio-Visual Description of Urban Scenes</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <h1 class="title is-1 publication-title">
+            AVSD-Scenes: A Dataset for Audio-Visual Description of Urban Scenes
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Dhanunjaya Varma Devalraju<sup>1,*</sup>,
+            </span>
+            <span class="author-block">
+              Arshdeep Singh<sup>2,*</sup>,
+            </span>
+            <span class="author-block">
+              Mark D. Plumbley<sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors" style="margin-top:10px;">
+            <span class="author-block">
+              <sup>1</sup>Indian Institute of Technology Madras, India
+            </span><br>
+            <span class="author-block">
+              <sup>2</sup>King's College London, United Kingdom
+            </span><br>
+          </div>
+
+          <!-- Links -->
+          <div class="publication-links" style="margin-top:25px;">
+
+            <!-- Paper -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2610.01861"
+                 target="_blank"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>Paper on ArXiv</span>
+              </a>
+            </span>
+
+            <!-- GitHub -->
+            <span class="link-block">
+              <a href="https://github.com/dhanunjaya-varma/AVSD-Scenes.git"
+                 target="_blank"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code on GitHub</span>
+              </a>
+            </span>
+
+            <!-- Optional Hugging Face -->
+            <!--
+            <span class="link-block">
+              <a href="https://huggingface.co/spaces/..."
+                 target="_blank"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="static/images/hf-logo.svg" style="height:1em;">
+                </span>
+                <span>Hugging Face Space</span>
+              </a>
+            </span>
+            -->
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+Natural language descriptions can provide rich semantic representations of audio-visual urban scenes, yet datasets that jointly describe both auditory and visual information remain limited. In this paper, we introduce AVSD-Scenes, a paired audio-visual scene description dataset for urban environments. The dataset contains 12,291 audio-visual scene descriptions generated from the TAU Urban Audio-Visual Scenes dataset. To construct the dataset, we first generate audio- and visual-based descriptions using Qwen2-Audio-7B and Qwen2.5-VL-7B, respectively. These modality-specific descriptions are then combined using large language models, namely Qwen3-14B, Mistral-Small-3.2-24B-Instruct-2506, and Gemma-3-27B-it, to produce multimodal descriptions that capture complementary information from both modalities. We benchmark AVSD-Scenes using semantic alignment, cross-modal retrieval, scene classification, LLM-as-a-judge evaluation, and human subjective assessment. Results show that multimodal descriptions improve semantic alignment and cross-modal retrieval performance compared with modality-specific descriptions while preserving strong scene-discriminative information. The generated descriptions achieve up to 94.5% accuracy in urban scene classification, while combining audio, visual, and description embeddings further improves accuracy to 95.4%. Furthermore, the descriptions remain highly scene-discriminative even when scene labels are removed from the prompting instructions, indicating that they capture semantic information derived from the audio-visual content rather than merely reflecting label information. The code is available at <a href="https://github.com/dhanunjaya-varma/AVSD-Scenes.git">GitHub Link</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">AVSD-Scenes Dataset Construction Pipeline</h2>
+
+    <!-- Image 1 -->
+    <figure>
+      <img src="./static/image/overall.png" alt="Framework Overview" style="max-width: 100%;">
+      <figcaption style="margin-top: 0.5em;"></figcaption>
+    </figure>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Dataset Analysis </h2>
+
+    <div style="display:flex; justify-content:center; gap:60px; margin-bottom:30px;">
+
+      <div style="width:60%;">
+        <h4 class="title is-5">Overall Description Statistics</h4>
+        <img src="./static/image/overall-description-statistics.png"
+           style="width:100%;">
+      </div>
+
+      <div style="width:30%;">
+        <h4 class="title is-5">Vocabulary Overlap</h4>
+          <img src="./static/image/vocabulary-overlap.png"
+           style="width:100%;">
+      </div>
+
+    </div>
+    <!-- Vocabulary Overlap -->
+    <div class="container is-max-desktop has-text-centered">
+       <h4 class="title is-5">Scene-wise Average Description Length</h4>
+       <figure>
+          <img src="./static/image/scene-wise-description-length.png"
+              style="max-width: 100%;">
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">LLM-as-a-Judge Evaluation Criteria</h2>
+
+    <figure>
+      <img src="./static/image/llm-judge-criteria.png"
+           alt="LLM-as-a-Judge Evaluation Criteria"
+           style="max-width: 100%;">
+      <figcaption style="margin-top: 0.5em;">
+        Table: Criteria used by Qwen2.5-14B-Instruct to evaluate the generated audio-visual descriptions.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-fluid has-text-centered">
+    <h2 class="title is-3">Human Evaluation Criteria</h2>
+
+    <figure>
+      <img src="./static/image/human-evaluation-criteria.png"
+           alt="Human Evaluation Criteria"
+           style="width: 100%; max-width: 1400px;">
+      <figcaption style="margin-top: 0.5em;">
+        Table: Human evaluation criteria for assessing the generated descriptions.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+<h2 class="title is-3">SVM-Based Scene Classification Results and Analysis </h2>
+
+<h4 class="title is-5">With Scene Labels in the Instructions</h4>
+<div style="display:flex; justify-content:center; gap:30px; margin-bottom:30px;">
+      <img src="./static/image/scene_classification_accuracy_bar_zoom.png"
+           style="width:65%;">
+
+      <img src="./static/image/SVM_withlabel.png"
+           style="width:25%;">
+    </div>
+
+<h4 class="title is-5">Without Scene Labels in the Instructions</h4>
+<div style="display:flex; justify-content:center; gap:30px; margin-bottom:20px;">
+      <img src="./static/image/scene_classification_accuracy_bar_zoom_without_scene_label.png"
+           style="width:65%;">
+
+      <img src="./static/image/SVM_withoutlabel.png"
+           style="width:25%;">
+    </div>
+
+<p>
+  <strong>A:</strong> Audio,
+  <strong>V:</strong> Visual,
+  <strong>D:</strong> Multimodal Description.
+</p>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="title is-3 has-text-centered">
+      Qualitative Results
+    </h2>
+  <p class="has-text-centered mb-5">
+      Qualitative comparison of descriptions generated with and without
+      scene labels in the instructions.
+    </p>
+<div class="box">
+
+  <h4 class="title is-5">Example 1 — Good</h4>
+
+  <!-- Video -->
+  <div class="has-text-centered mb-4">
+    <video controls style="width: 60%; max-width: 700px;">
+      <source src="./static/video/tram_100.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Descriptions -->
+  <div class="table-container">
+    <table class="table is-bordered is-fullwidth">
+      <thead>
+        <tr>
+          <th class="has-text-centered">Scene Label in Instruction</th>
+          <th class="has-text-centered">Qwen3</th>
+          <th class="has-text-centered">Mistral</th>
+          <th class="has-text-centered">Gemma</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>✓ Yes</th>
+          <td>
+            A person in a maroon jacket with a fur-lined hood sits on a red seat inside a tram, holding a piece of paper and adjusting their hair. Another person is partially visible across the tram, resting or sleeping. The audio includes intermittent rattling and scraping sounds, along with a continuous low hum, suggesting the tram is in motion.
+          </td>
+          <td>
+            A person sits on a red seat inside a tram, holding a piece of paper while adjusting their hair. The tram produces a low humming sound along with intermittent rattling and scraping noises as it moves.
+          </td>
+          <td>
+            A person wearing a maroon jacket sits on a red seat, holding paper and adjusting their hair while riding a moving tram. Throughout the scene, rattling and scraping sounds accompany a low humming noise, suggesting vehicle movement. Another person sits across the tram.
+          </td>
+        </tr>
+
+        <tr>
+          <th>✗ No</th>
+          <td>
+            A person in a maroon jacket with a fur-lined hood sits on a red seat inside a vehicle, holding a piece of paper and adjusting their hair. A second individual is partially visible across from them. The audio includes a continuous hum, sporadic loud impacts, and a final beep, along with intermittent static.
+          </td>
+          <td>
+            A person sits on a red seat inside a vehicle, holding a piece of paper while adjusting their hair. A persistent humming sound accompanies sporadic loud impacts and a final beep, with static present throughout.
+          </td>
+          <td>
+            A person wearing a maroon jacket sits on a red seat inside a vehicle while holding paper and adjusting their hair. Throughout the scene, a persistent humming sound and sporadic loud impacts are audible, along with static. A brief beep occurs near the end of the recording.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="box">
+
+  <h4 class="title is-5">Example 2 — Good</h4>
+
+  <!-- Video -->
+  <div class="has-text-centered mb-4">
+    <video controls style="width: 60%; max-width: 700px;">
+      <source src="./static/video/street_pedestrian_037.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Descriptions -->
+  <div class="table-container">
+    <table class="table is-bordered is-fullwidth">
+      <thead>
+        <tr>
+          <th class="has-text-centered">Scene Label in Instruction</th>
+          <th class="has-text-centered">Qwen3</th>
+          <th class="has-text-centered">Mistral</th>
+          <th class="has-text-centered">Gemma</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>✓ Yes</th>
+          <td>
+            A cobblestone street is lined with buildings, showing pedestrians walking and some carrying bags. A few individuals sit at outdoor tables near a shop with a green sign featuring white lettering. Audio includes group conversations, a woman speaking loudly, footsteps, a soft male voice, and eventually only the sound of someone walking.
+          </td>
+          <td>
+            On a cobblestone street lined with buildings, several pedestrians walk while others sit at outdoor tables near a shop with a green sign. Conversations and footsteps are heard, with a woman speaking loudly before the voices fade, leaving only the sound of someone walking.
+          </td>
+          <td>
+            People walk along a cobblestone street past buildings and a shop with a green sign. Throughout the scene, conversations and footsteps can be heard, with multiple individuals speaking at different volumes. Eventually, only the sound of footsteps remains as people continue walking.
+          </td>
+        </tr>
+
+        <tr>
+          <th>✗ No</th>
+          <td>
+            The video shows a cobblestone street with buildings on both sides, where several people walk, some carrying bags, and a few sit at outdoor tables near a shop with a green sign. The audio includes a gradually increasing background hum, overlapping with continuous footsteps, and a brief high-pitched tone near the end.
+          </td>
+          <td>
+            A cobblestone street lined with buildings features people walking and others seated at outdoor tables near a shop with a green sign. A background hum grows louder before fading, accompanied by footsteps. A brief tone sounds near the end.
+          </td>
+          <td>
+            The scene depicts a cobblestone street with buildings and people walking, some carrying bags. Throughout the recording, footsteps can be heard alongside a background hum that increases in volume. Near the end, a brief, high-pitched tone is audible while people continue to walk past a shop with a green sign displaying white lettering.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="box">
+
+  <h4 class="title is-5">Example 3 — Good</h4>
+
+  <!-- Video -->
+  <div class="has-text-centered mb-4">
+    <video controls style="width: 60%; max-width: 700px;">
+      <source src="./static/video/bus_059.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Descriptions -->
+  <div class="table-container">
+    <table class="table is-bordered is-fullwidth">
+      <thead>
+        <tr>
+          <th class="has-text-centered">Scene Label in Instruction</th>
+          <th class="has-text-centered">Qwen3</th>
+          <th class="has-text-centered">Mistral</th>
+          <th class="has-text-centered">Gemma</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>✓ Yes</th>
+          <td>
+            A bus interior shows passengers seated on red and gray checkered seats, some gazing out the large windows. Engine hums continuously, accompanied by repeated loud thuds and brief beeps throughout the scene.
+          </td>
+          <td>
+            Passengers sit inside a bus with red and gray seats, some with a checkered pattern, while an engine idles and hums throughout the scene. Loud thuds and brief beeps occur intermittently.
+          </td>
+          <td>
+            The interior of a bus contains passengers seated on red, gray, and checkered patterned seats, some looking out the windows. Throughout the scene, a consistent engine hum is present alongside repeating loud thuds and brief beeps.
+          </td>
+        </tr>
+
+        <tr>
+          <th>✗ No</th>
+          <td>
+            A bus interior shows passengers seated and standing, with a mix of red and gray seats, some checkered. A continuous engine sound is present, accompanied by intermittent impact noises.
+          </td>
+          <td>
+            Passengers sit and stand inside a bus with red and gray seats, some featuring a checkered pattern. An engine runs continuously while impacts occur intermittently.
+          </td>
+          <td>
+            The interior of a bus with seated and standing passengers is visible, where seats are red, gray, or checkered. Throughout the scene, an engine is running alongside recurring impacts. These impacts happen at intervals, continuing throughout the duration of the recording.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="box">
+
+  <h4 class="title is-5">Example 4 — Good</h4>
+
+  <!-- Video -->
+  <div class="has-text-centered mb-4">
+    <video controls style="width: 60%; max-width: 700px;">
+      <source src="./static/video/street_traffic_091.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Descriptions -->
+  <div class="table-container">
+    <table class="table is-bordered is-fullwidth">
+      <thead>
+        <tr>
+          <th class="has-text-centered">Scene Label in Instruction</th>
+          <th class="has-text-centered">Qwen3</th>
+          <th class="has-text-centered">Mistral</th>
+          <th class="has-text-centered">Gemma</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>✓ Yes</th>
+          <td>
+            A nighttime street scene shows cars driving with headlights and taillights creating streaks of light under streetlights. A vehicle's engine runs continuously before accelerating rapidly, while another vehicle passes intermittently. Palm trees line the road, and a stone balustrade runs along the right side.
+          </td>
+          <td>
+            Cars drive along a nighttime street under streetlights, their headlights and taillights creating streaks of light. A vehicle's engine runs continuously, accelerating rapidly at times, while another vehicle passes by intermittently. Palm trees line the road, and a stone balustrade runs along the right side.
+          </td>
+          <td>
+            Cars drive along a nighttime street illuminated by lights, their headlights and taillights appearing as streaks. Throughout the scene, a vehicle engine runs while another vehicle passes by intermittently. Towards the end, a vehicle rapidly accelerates. Palm trees and a stone balustrade line the road.
+          </td>
+        </tr>
+
+        <tr>
+          <th>✗ No</th>
+          <td>
+            A nighttime city street scene shows cars driving with headlights on, flanked by palm trees and ornate lampposts, with a classical-style building in the background. The audio includes a gradually increasing humming sound that peaks before fading, accompanied by cars passing by with roaring engines, which continue to echo in the background.
+          </td>
+          <td>
+            Cars drive along a city street at night, their headlights illuminating the road. Palm trees and ornate lampposts line the street, while a large building with classical architecture stands in the background. A distant humming sound grows louder before fading, accompanied by the roar of passing cars.
+          </td>
+          <td>
+            Cars drive along a city street lined with palm trees and lampposts, illuminated by headlights during the night. Simultaneously, a humming sound grows louder before fading, accompanied by the continuous sound of passing car engines. A large building is visible in the background.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="box">
+
+  <h4 class="title is-5">Example 5 — Challenging</h4>
+
+  <!-- Video -->
+  <div class="has-text-centered mb-4">
+    <video controls style="width: 60%; max-width: 700px;">
+      <source src="./static/video/metro_station_069.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Descriptions -->
+  <div class="table-container">
+    <table class="table is-bordered is-fullwidth">
+      <thead>
+        <tr>
+          <th class="has-text-centered">Scene Label in Instruction</th>
+          <th class="has-text-centered">Qwen3</th>
+          <th class="has-text-centered">Mistral</th>
+          <th class="has-text-centered">Gemma</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>✓ Yes</th>
+          <td>
+            A metro station scene shows a person in a striped shirt and shorts standing near a pillar, facing away from the camera while looking at a screen. Another individual, partially hidden by a column, walks by carrying a bag. Soft music plays in the background, and a train passes by repeatedly, blowing its horn at intervals. A man’s voice is briefly heard before fading out.
+          </td>
+          <td>
+            In a metro station, a person in a striped shirt and shorts stands near a pillar, looking at a screen. A train passes by, blowing its horn intermittently, while soft music plays in the background. Another person walks past, carrying a bag.
+          </td>
+          <td>
+            A person in a striped shirt and shorts stands near a pillar, looking at a screen, while another person walks by carrying a bag. Throughout the scene, a train passes with its horn sounding, accompanied by distant music, and a man’s voice briefly speaks before fading out.
+          </td>
+        </tr>
+
+        <tr>
+          <th>✗ No</th>
+          <td>
+            The video shows a person in a striped shirt and shorts standing near a pillar, facing away from the camera while looking at a screen, and another individual partially hidden behind a column holding a phone. The audio includes a muffled background track and a continuous hum for the first 10 minutes, followed by a sequence of loud pops and bangs before the hum continues alone.
+          </td>
+          <td>
+            In a subway station, two people are present: one standing near a pillar while looking at a screen, and another seated nearby holding a phone. Throughout the scene, muffled music and a consistent humming sound play in the background. Near the end, a series of loud pops and bangs occur before the humming continues.
+          </td>
+          <td>
+            The scene inside a subway station features a person in a striped shirt and shorts standing near a pillar, looking at a screen, while another person sits holding a phone. Throughout the recording, muffled music and a consistent humming sound play, transitioning to loud pops and bangs before the humming continues to the end.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="box">
+
+  <h4 class="title is-5">Example 6 — Challenging</h4>
+
+  <!-- Video -->
+  <div class="has-text-centered mb-4">
+    <video controls style="width: 60%; max-width: 700px;">
+      <source src="./static/video/public_square_079.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Descriptions -->
+  <div class="table-container">
+    <table class="table is-bordered is-fullwidth">
+      <thead>
+        <tr>
+          <th class="has-text-centered">Scene Label in Instruction</th>
+          <th class="has-text-centered">Qwen3</th>
+          <th class="has-text-centered">Mistral</th>
+          <th class="has-text-centered">Gemma</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>✓ Yes</th>
+          <td>
+            A bustling public square features a large, ornate building in the background while people walk and stand around. A person holds a smartphone in the foreground. Distant music plays alongside soft speech from a child and a woman, interrupted by a dog’s bark, passing bus, wind, and a brief instance of static.
+          </td>
+          <td>
+            In a public square, people walk and stand near an ornate building while a person holds a smartphone. Distant music plays alongside soft speech from a child and a woman, followed by a dog barking and a passing bus. Wind blows into the microphone, and static noise briefly appears before the recording ends.
+          </td>
+          <td>
+            The recording features a bustling public square with people walking near a large, ornate building. Sounds include distant music, speech from a child and woman, a passing bus, wind, a dog barking, and brief static noise. A person in the foreground holds a smartphone.
+          </td>
+        </tr>
+
+        <tr>
+          <th>✗ No</th>
+          <td>
+            A large, ornate building, possibly a cathedral, is visible in a bustling square with people walking and standing on cobblestone. A person holds a smartphone in the foreground. In the audio, a soft song plays, followed by fading footsteps and a child’s voice with a faint whistle. Another song begins as the footsteps recede, and a car engine revs up before fading out.
+          </td>
+          <td>
+            A person stands in front of a large, ornate building in a busy square while holding a smartphone. In the background, people walk and stand on cobblestones. A song plays softly, followed by footsteps and a child’s voice. Another song starts louder, and a car engine revs up.
+          </td>
+          <td>
+            The recording begins with a song playing as people walk around a square featuring a large building. Footsteps fade into the distance alongside a child’s voice and a faint whistling tone, then another song starts. A car engine revs up and fades out towards the end of the recording.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</section>
+
+
+<section class="section" id="acknowledgments">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3">Acknowledgments</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            This work was supported by the 
+            <b>Engineering and Physical Sciences Research Council (EPSRC)</b> 
+            under Grant <b>EP/Y028805/1</b>.
+          </p>
+
+          <p>
+            For the purpose of Open Access, the authors have applied a 
+            <b>Creative Commons Attribution (CC BY)</b> licence to any 
+            Author Accepted Manuscript arising from this submission.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page borrows from the <a
+              href="https://github.com/nerfies/nerfies.github.io">project</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> 
+
+</body>
+</html>
